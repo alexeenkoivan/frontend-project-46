@@ -3,12 +3,13 @@
 const program = require('commander');
 
 program
-    .description('Compares two configuration files and shows a difference')
-    .version('1.0.0')
-    .option('-h, --help', 'display help for command')
-    .parse(process.argv);
+  .description('Compares two configuration files and shows a difference.')
+  .version('output the version number')
+  .argument('<filepath1>')
+  .argument('<filepath2>')
+  .option('-f, --format  <type>', 'output format')
+  .action((filepath1, filepath2) => {
+    console.log(filepath1, filepath2);
+  });
 
-if (program.help) {
-    program.outputHelp();
-    process.exit(0);
-}
+program.parse();
