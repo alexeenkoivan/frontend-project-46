@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Проект Вычислитель Отличий",
-  "main": "index.js",
+  "main": "package.json",
   "bin": {
     "gendiff": "/bin/gendiff.js"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/alexeenkoivan/frontend-project-46#readme",
   "dependencies": {
-    "commander": "^11.0.0"
+    "commander": "^11.0.0",
+    "lodash": "^4.17.21"
   }
 }

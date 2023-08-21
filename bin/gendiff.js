@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const { Command } = require('commander');
+import genDiff from '../src/genDiff.js';
+import path from 'path';
 const program = new Command();
 
 program
@@ -8,5 +10,12 @@ program
   .version('1.0.0', '-V, --version','output version information')
   .helpOption('-h, --help', 'output usage information')
   .option('-f, --format <type>', 'output format')
-  .arguments('<filepath1> <filepath2>')
+  .argument('<filepath1>')
+  .argument('<filepath2>')
+  .action((filepath1, filepath2) => {
+    const absolutePath1 = path.resolve(filepath1);
+    const absolutePath2 = path.resolve(filepath2);
+    const diff = genDiff(absolutePath1, absolutePath2);
+    console.log(diff);
+  })
   .parse();
