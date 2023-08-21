@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Проект Вычислитель Отличий",
   "main": "index.js",
+  "bin": {
+    "gendiff": "/bin/gendiff.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
