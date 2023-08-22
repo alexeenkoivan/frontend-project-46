@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander');
+import { Command } from 'commander';
 import genDiff from '../src/genDiff.js';
 import path from 'path';
 const program = new Command();

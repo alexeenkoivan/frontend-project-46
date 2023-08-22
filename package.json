@@ -7,8 +7,10 @@
     "gendiff": "/bin/gendiff.js"
   },
   "scripts": {
+    "start": "node --experimental-modules bin/gendiff.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexeenkoivan/frontend-project-46.git"
