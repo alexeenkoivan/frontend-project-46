@@ -1,4 +1,3 @@
-import { test, expect } from '@jest/globals';
 import path from 'path';
 import genDiff from '../src/genDiff.js';
 
