@@ -3,15 +3,13 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import genDiff from '../src/genDiff.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
-const filePath1 = path.resolve(__dirname, '__fixtures__/file1.json');
-const filePath2 = path.resolve(__dirname, '__fixtures__/file2.json');
+const filePath1 = path.resolve(dirname, '__fixtures__/file1.json');
+const filePath2 = path.resolve(dirname, '__fixtures__/file2.json');
 
 test('genDiff() compares two JSON files and produces the expected result', () => {
-  const expectedDiff = fs.readFileSync(
-    path.resolve(__dirname, '__fixtures__/expectedJsonFormat'), 'utf-8'
-  );
+  const expectedDiff = fs.readFileSync(path.resolve(dirname, '__fixtures__/expectedJsonFormat'), 'utf-8');
   expect(genDiff(filePath1, filePath2)).toEqual(expectedDiff);
 });
