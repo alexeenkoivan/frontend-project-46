@@ -3,7 +3,7 @@
 import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
-import parsers from './parsers';
+import parsers from './parsers.js';
 
 const getAbsoluteFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const readFile = (filepath) => fs.readFileSync(filepath, 'utf-8');
