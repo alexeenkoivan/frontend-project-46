@@ -7,3 +7,6 @@
 
 1. Step 3. Comparison of flat files (JSON).
 [![asciicast](https://asciinema.org/a/VZErgBB5iIJgVngF7BXbqrjvO.svg)](https://asciinema.org/a/VZErgBB5iIJgVngF7BXbqrjvO)
+
+2. Step 5. Comparison of flat files (YML).
+[![asciicast](https://asciinema.org/a/m1NoZyzibMzDoSO39aAltCYnS.svg)](https://asciinema.org/a/m1NoZyzibMzDoSO39aAltCYnS)
