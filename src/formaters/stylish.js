@@ -24,7 +24,7 @@ const stringify = (value, depth) => {
   ].join('\n');
 };
 
-const stylish = (diff, depth = 1) => {
+const iter = (diff, depth) => {
   const { indent, bracketIndent } = getIndent(depth, 1);
 
   const result = diff.map((node) => {
@@ -34,7 +34,7 @@ const stylish = (diff, depth = 1) => {
 
     switch (type) {
       case 'nested':
-        return `${indent}  ${key}: ${stylish(node.children, depth + 1)}`;
+        return `${indent}  ${key}: ${iter(node.children, depth + 1)}`;
       case 'deleted':
         return `${indent}- ${key}: ${stringify(value, depth + 1)}`;
       case 'added':
@@ -52,5 +52,7 @@ const stylish = (diff, depth = 1) => {
     `${bracketIndent}}`,
   ].join('\n');
 };
+
+const stylish = (diff, depth = 1) => iter(diff, depth);
 
 export default stylish;

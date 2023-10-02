@@ -10,7 +10,7 @@ const getAbsoluteFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const readFile = (filepath) => fs.readFileSync(filepath, 'utf-8');
 const getFormat = (filepath) => path.extname(filepath);
 
-const genDiff = (filepath1, filepath2, formatType = 'stylish') => {
+const genDiff = (filepath1, filepath2) => {
   const data1 = readFile(getAbsoluteFilePath(filepath1));
   const data2 = readFile(getAbsoluteFilePath(filepath2));
 
@@ -19,7 +19,7 @@ const genDiff = (filepath1, filepath2, formatType = 'stylish') => {
 
   const differences = diff(obj1, obj2);
 
-  return stylish(differences, formatType);
+  return stylish(differences);
 };
 
 export default genDiff;
