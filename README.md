@@ -16,3 +16,6 @@
 
 4. Comparison of nested files JSON in plain format.
 [![asciicast](https://asciinema.org/a/FWe0ic2DkKJEuio9lTSxBunIf.svg)](https://asciinema.org/a/FWe0ic2DkKJEuio9lTSxBunIf)
+
+5. Comparison of nested files JSON in JSON format.
+[![asciicast](https://asciinema.org/a/t4Qle81pL0uhG8y9vdEnTBsOl.svg)](https://asciinema.org/a/t4Qle81pL0uhG8y9vdEnTBsOl)

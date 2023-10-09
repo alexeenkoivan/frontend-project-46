@@ -1,5 +1,6 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
+import json from './json.js';
 
 export default (diff, format) => {
   switch (format) {
@@ -7,6 +8,8 @@ export default (diff, format) => {
       return plain(diff);
     case 'stylish':
       return stylish(diff, 1);
+    case 'json':
+      return json(diff);
     default:
       throw new Error('Invalid format!');
   }
