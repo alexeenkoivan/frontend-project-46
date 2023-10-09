@@ -34,13 +34,13 @@ test('genDiff() compares two nested YAML files and produces the expected result'
 });
 
 test('genDiff() compares two JSON files and produces the expected plain result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/file1.json');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/file2.json');
+  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.json');
+  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.json');
   expect(genDiff(jsonFilePath1, jsonFilePath2, 'plain')).toEqual(expectedPlainDiff);
 });
 
 test('genDiff() compares two YAML files and produces the expected plain result', () => {
-  const yamlFilePath1 = path.resolve(dirname, '__fixtures__/file1.yml');
-  const yamlFilePath2 = path.resolve(dirname, '__fixtures__/file2.yml');
+  const yamlFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.yaml');
+  const yamlFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.yaml');
   expect(genDiff(yamlFilePath1, yamlFilePath2, 'plain')).toEqual(expectedPlainDiff);
 });
