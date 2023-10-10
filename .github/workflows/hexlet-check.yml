@@ -33,6 +33,3 @@ jobs:
           cache: 'npm'
       - run: make lint
       - run: make test
-
-      - name: Generate code coverage report
-        run: npx jest --coverage
