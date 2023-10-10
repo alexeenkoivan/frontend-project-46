@@ -5,4 +5,6 @@ test:
 gendiff:
 	node bin/gendiff.js
 test-coverage:
-	npx jest --coverage
+	npm test -- --coverage --coverageProvider=v8
+publish:
+    npm publish --dry-run
