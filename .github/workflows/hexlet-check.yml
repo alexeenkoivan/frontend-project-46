@@ -35,4 +35,4 @@ jobs:
       - run: make test
 
       - name: Generate code coverage report
-        run: npm test -- --coverage
+        run: npx jest --coverage
