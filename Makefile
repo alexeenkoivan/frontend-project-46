@@ -1,5 +1,5 @@
 lint:
-	npx eslint .
+	npx eslint . --fix
 test:
 	npm test
 gendiff:

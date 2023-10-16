@@ -1,9 +1,7 @@
-#!/usr/bin/env node
-
 import fs from 'fs';
 import path from 'path';
 import parsers from './parsers.js';
-import diff from './formaters/diff.js';
+import diff from './diff.js';
 import formatDiff from './formaters/index.js';
 
 const getAbsoluteFilePath = (filepath) => path.resolve(process.cwd(), filepath);

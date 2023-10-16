@@ -7,7 +7,7 @@ export default (diff, format) => {
     case 'plain':
       return plain(diff);
     case 'stylish':
-      return stylish(diff, 1);
+      return stylish(diff);
     case 'json':
       return json(diff);
     default:

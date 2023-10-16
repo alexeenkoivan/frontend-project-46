@@ -10,50 +10,20 @@ const expectedNestedDiff = fs.readFileSync(path.resolve(dirname, '__fixtures__/e
 const expectedPlainDiff = fs.readFileSync(path.resolve(dirname, '__fixtures__/expectedPlainData'), 'utf-8');
 const expectedJsonDiff = fs.readFileSync(path.resolve(dirname, '__fixtures__/expectedJsonData'), 'utf-8');
 
-test('genDiff() compares two JSON files and produces the expected result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/file1.json');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/file2.json');
-  expect(genDiff(jsonFilePath1, jsonFilePath2)).toEqual(expectedDiff);
-});
-
-test('genDiff() compares two YAML files and produces the expected result', () => {
-  const yamlFilePath1 = path.resolve(dirname, '__fixtures__/file1.yml');
-  const yamlFilePath2 = path.resolve(dirname, '__fixtures__/file2.yml');
-  expect(genDiff(yamlFilePath1, yamlFilePath2)).toEqual(expectedDiff);
-});
-
-test('genDiff() compares two nested JSON files and produces the expected result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.json');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.json');
-  expect(genDiff(jsonFilePath1, jsonFilePath2)).toEqual(expectedNestedDiff);
-});
-
-test('genDiff() compares two nested YAML files and produces the expected result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.yaml');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.yaml');
-  expect(genDiff(jsonFilePath1, jsonFilePath2)).toEqual(expectedNestedDiff);
-});
-
-test('genDiff() compares two JSON files and produces the expected plain result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.json');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.json');
-  expect(genDiff(jsonFilePath1, jsonFilePath2, 'plain')).toEqual(expectedPlainDiff);
-});
-
-test('genDiff() compares two YAML files and produces the expected plain result', () => {
-  const yamlFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.yaml');
-  const yamlFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.yaml');
-  expect(genDiff(yamlFilePath1, yamlFilePath2, 'plain')).toEqual(expectedPlainDiff);
-});
-
-test('genDiff() compares two JSON files and produces the expected JSON result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.json');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.json');
-  expect(genDiff(jsonFilePath1, jsonFilePath2, 'json')).toEqual(expectedJsonDiff);
-});
-
-test('genDiff() compares two YAML files and produces the expected JSON result', () => {
-  const jsonFilePath1 = path.resolve(dirname, '__fixtures__/fileWithNesting1.yaml');
-  const jsonFilePath2 = path.resolve(dirname, '__fixtures__/fileWithNesting2.yaml');
-  expect(genDiff(jsonFilePath1, jsonFilePath2, 'json')).toEqual(expectedJsonDiff);
-});
+test.each([
+  ['file1.json', 'file2.json', expectedDiff],
+  ['file1.yml', 'file2.yml', expectedDiff],
+  ['fileWithNesting1.json', 'fileWithNesting2.json', expectedNestedDiff],
+  ['fileWithNesting1.yaml', 'fileWithNesting2.yaml', expectedNestedDiff],
+  ['fileWithNesting1.json', 'fileWithNesting2.json', expectedPlainDiff, 'plain'],
+  ['fileWithNesting1.yaml', 'fileWithNesting2.yaml', expectedPlainDiff, 'plain'],
+  ['fileWithNesting1.json', 'fileWithNesting2.json', expectedJsonDiff, 'json'],
+  ['fileWithNesting1.yaml', 'fileWithNesting2.yaml', expectedJsonDiff, 'json'],
+])(
+  'genDiff() compares two %s and %s and produces the expected result',
+  (file1, file2, expected, format = 'stylish') => {
+    const filePath1 = path.resolve(dirname, `__fixtures__/${file1}`);
+    const filePath2 = path.resolve(dirname, `__fixtures__/${file2}`);
+    expect(genDiff(filePath1, filePath2, format)).toEqual(expected);
+  },
+);
