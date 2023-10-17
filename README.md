@@ -35,17 +35,17 @@ make publish
 npm link
 
 
-1. Comparison of flat files (JSON).
+Comparison of flat files (JSON).
 [![asciicast](https://asciinema.org/a/VZErgBB5iIJgVngF7BXbqrjvO.svg)](https://asciinema.org/a/VZErgBB5iIJgVngF7BXbqrjvO)
 
-2. Comparison of flat files (YML).
+Comparison of flat files (YML).
 [![asciicast](https://asciinema.org/a/m1NoZyzibMzDoSO39aAltCYnS.svg)](https://asciinema.org/a/m1NoZyzibMzDoSO39aAltCYnS)
 
-3. Comparison of nested files JSON.
+Comparison of nested files JSON.
 [![asciicast](https://asciinema.org/a/ESiWSCwdyZBKIfLIRMCkBMCEy.svg)](https://asciinema.org/a/ESiWSCwdyZBKIfLIRMCkBMCEy)
 
-4. Comparison of nested files JSON in plain format.
+Comparison of nested files JSON in plain format.
 [![asciicast](https://asciinema.org/a/FWe0ic2DkKJEuio9lTSxBunIf.svg)](https://asciinema.org/a/FWe0ic2DkKJEuio9lTSxBunIf)
 
-5. Comparison of nested files JSON in JSON format.
+Comparison of nested files JSON in JSON format.
 [![asciicast](https://asciinema.org/a/t4Qle81pL0uhG8y9vdEnTBsOl.svg)](https://asciinema.org/a/t4Qle81pL0uhG8y9vdEnTBsOl)
