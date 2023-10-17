@@ -41,6 +41,8 @@ make publish
 npm link
 
 
+### ASCII Art Examples:
+
 Comparison of flat files (JSON).
 [![asciicast](https://asciinema.org/a/VZErgBB5iIJgVngF7BXbqrjvO.svg)](https://asciinema.org/a/VZErgBB5iIJgVngF7BXbqrjvO)
 
