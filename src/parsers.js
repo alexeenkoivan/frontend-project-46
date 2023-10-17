@@ -1,7 +1,12 @@
 import yaml from 'js-yaml';
 
-const parsers = (data, formatData) => {
-  const fileExtension = formatData.toLowerCase().replace(/^\./, '');
+const getFormat = (format) => {
+  const parts = format.split('.');
+  return parts[parts.length - 1].toLowerCase();
+};
+
+const parsers = (data, format) => {
+  const fileExtension = getFormat(format);
   switch (fileExtension) {
     case 'json':
       return JSON.parse(data);
@@ -9,7 +14,7 @@ const parsers = (data, formatData) => {
     case 'yaml':
       return yaml.load(data);
     default:
-      return new Error('Invalid data format');
+      return new Error(`Invalid data format: ${fileExtension}`);
   }
 };
 
