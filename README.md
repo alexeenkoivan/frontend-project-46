@@ -17,21 +17,27 @@ This repository hosts a CLI utility designed to detect differences between two f
 ### Installation
 
 1. **Clone the repository:**
+
 git clone git@github.com/alexeenkoivan/frontend-project-46.git
 
 2. **Change the directory:**
+
 cd frontend-project-46
 
 3. **Install dependencies:**
+
 make install
 
 4. **Make the script executable:**
+
 chmod +x bin/gendiff.js
 
 5. **Publish the package locally:**
+
 make publish
 
 6. **Link the package globally:**
+
 npm link
 
 
