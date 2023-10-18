@@ -6,7 +6,13 @@ import formatDiff from './formaters/index.js';
 
 const getAbsoluteFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const readFile = (filepath) => fs.readFileSync(filepath, 'utf-8');
-const getFormat = (filepath) => path.extname(filepath);
+const getFormat = (format) => {
+  if (format.includes('.')) {
+    const parts = format.split('.');
+    return parts[parts.length - 1].toLowerCase();
+  }
+  return path.extname(format).slice(1).toLowerCase();
+};
 
 const genDiff = (filepath1, filepath2, formatType = 'stylish') => {
   const data1 = readFile(getAbsoluteFilePath(filepath1));
