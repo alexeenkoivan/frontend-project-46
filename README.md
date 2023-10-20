@@ -6,6 +6,9 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/032bf5ca495a35983ff3/test_coverage)](https://codeclimate.com/github/alexeenkoivan/frontend-project-46/test_coverage)
 
+![Node CI](https://github.com/alexeenkoivan/frontend-project-46/workflows/Node%20CI/badge.svg)
+
+
 This repository hosts a CLI utility designed to detect differences between two files. It supports JSON and YAML as input data formats and offers three output formats: stylish, plain text, and JSON.
 
 ### Minimum Requirements:
