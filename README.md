@@ -9,6 +9,7 @@
 ![Node CI](https://github.com/alexeenkoivan/frontend-project-46/workflows/Node%20CI/badge.svg)
 
 
+
 This repository hosts a CLI utility designed to detect differences between two files. It supports JSON and YAML as input data formats and offers three output formats: stylish, plain text, and JSON.
 
 ### Minimum Requirements:
